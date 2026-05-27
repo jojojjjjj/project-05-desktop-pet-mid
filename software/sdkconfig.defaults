@@ -1,0 +1,291 @@
+# ================================================================
+# ESP-SparkBot 默认 Kconfig 配置文件
+# ESP-SparkBot Default Kconfig Configuration
+# ================================================================
+# 替代原来的 config.template.yaml
+# Replaces the original config.template.yaml
+#
+# 使用方法 | Usage:
+#   将此文件复制到项目根目录，idf.py build 会自动加载
+#   Copy this file to project root, idf.py build auto-loads it.
+#
+#   修改配置: idf.py menuconfig
+#   Modify settings: idf.py menuconfig
+#
+# 注意 | Note:
+#   不要把 API key 写在这里！使用 menuconfig 或环境变量设置。
+#   Do NOT write API keys here! Use menuconfig or env variables.
+
+# ================================================================
+# 第一部分: 系统基础配置 | Basic System Configuration
+# ================================================================
+
+# FreeRTOS 配置
+CONFIG_FREERTOS_HZ=1000
+CONFIG_FREERTOS_UNICORE=n
+CONFIG_FREERTOS_NUMBER_OF_CORES=2
+CONFIG_FREERTOS_MAX_TASK_NAME_LEN=16
+
+# 主频: 160MHz (平衡功耗与性能)
+# CPU Frequency: 160MHz (balance power & performance)
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ=160
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_160=y
+
+# Flash 大小: 16MB
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
+
+# PSRAM: 8MB (摄像头和 AI 推理需要大量内存)
+# PSRAM: 8MB (camera & AI inference need large memory)
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_CAPS_ALLOC=y
+CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=4096
+
+# ================================================================
+# 第二部分: WiFi 连接 | WiFi Connection
+# ================================================================
+
+CONFIG_SPARKBOT_WIFI_ENABLE=y
+# WiFi SSID (请通过 menuconfig 设置 | Set via menuconfig)
+# CONFIG_SPARKBOT_WIFI_SSID="YourWiFiName"
+# CONFIG_SPARKBOT_WIFI_PASSWORD="YourWiFiPassword"
+CONFIG_SPARKBOT_WIFI_MAX_RETRY=5
+CONFIG_SPARKBOT_WIFI_CONNECT_TIMEOUT=30000
+
+# 启用 NTP 时间同步 (RTC Sync)
+# Enable NTP time sync
+CONFIG_SPARKBOT_NTP_ENABLE=y
+CONFIG_SPARKBOT_NTP_SERVER="ntp.aliyun.com"
+CONFIG_SPARKBOT_NTP_TIMEZONE="CST-8"
+
+# ================================================================
+# 第三部分: AI 对话配置 | AI Dialogue Configuration
+# ================================================================
+
+# AI 提供商选择 (Select one):
+#   - deepseek: DeepSeek Chat API (推荐, 便宜)
+#   - wenxin: 百度文心一言
+#   - huoshan: 字节跳动火山引擎
+#   - openai: OpenAI ChatGPT
+CONFIG_SPARKBOT_AI_PROVIDER="deepseek"
+CONFIG_SPARKBOT_AI_PROVIDER_DEEPSEEK=y
+CONFIG_SPARKBOT_AI_PROVIDER_WENXIN=n
+CONFIG_SPARKBOT_AI_PROVIDER_HUOSHAN=n
+CONFIG_SPARKBOT_AI_PROVIDER_OPENAI=n
+
+# API 端点配置 (各平台默认地址)
+# API endpoint config (default URLs per platform)
+CONFIG_SPARKBOT_AI_BASE_URL_DEEPSEEK="https://api.deepseek.com/v1"
+CONFIG_SPARKBOT_AI_BASE_URL_WENXIN="https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat"
+CONFIG_SPARKBOT_AI_BASE_URL_HUOSHAN="https://ark.cn-beijing.volces.com/api/v3"
+CONFIG_SPARKBOT_AI_BASE_URL_OPENAI="https://api.openai.com/v1"
+
+# AI 模型名称
+CONFIG_SPARKBOT_AI_MODEL_DEEPSEEK="deepseek-chat"
+CONFIG_SPARKBOT_AI_MODEL_WENXIN="ernie-bot-4"
+CONFIG_SPARKBOT_AI_MODEL_HUOSHAN="doubao-lite-32k"
+CONFIG_SPARKBOT_AI_MODEL_OPENAI="gpt-4o-mini"
+
+# AI 对话参数
+CONFIG_SPARKBOT_AI_MAX_TOKENS=200
+CONFIG_SPARKBOT_AI_TEMPERATURE=80           # 80 = 0.8 (乘以100存整数)
+CONFIG_SPARKBOT_AI_CONVERSATION_MAX_ROUNDS=10  # 最多保留10轮对话
+
+# API 密钥 (通过 menuconfig 或环境变量设置，不要硬编码!)
+# API Key (set via menuconfig or env variable, DO NOT hardcode!)
+# CONFIG_SPARKBOT_AI_API_KEY="sk-xxxxxxxxxxxxx"
+
+# ================================================================
+# 第四部分: 语音服务配置 | Voice Service Configuration
+# ================================================================
+
+# 百度语音识别/合成
+# Baidu Speech Recognition / TTS
+CONFIG_SPARKBOT_TTS_ENABLE=y
+# CONFIG_SPARKBOT_TTS_BAIDU_TOKEN="24.xxxxxxxxxxxxx.xxxxxxxxxxxxx"
+CONFIG_SPARKBOT_TTS_VOLUME=5                # 0-15
+CONFIG_SPARKBOT_TTS_SPEED=5                 # 0-15
+CONFIG_SPARKBOT_TTS_PIT=5                   # 0-15
+CONFIG_SPARKBOT_TTS_PER=4                   # 发音人: 4=度小美
+CONFIG_SPARKBOT_TTS_AUDIO_SAMPLE_RATE=16000
+
+# 录音/语音识别
+CONFIG_SPARKBOT_ASR_ENABLE=y
+CONFIG_SPARKBOT_ASR_SAMPLE_RATE=16000
+CONFIG_SPARKBOT_ASR_VAD_THRESHOLD=30        # 语音活动检测阈值 (0-100)
+CONFIG_SPARKBOT_ASR_SILENCE_TIMEOUT=2000    # 静音超时 (ms)
+
+# ================================================================
+# 第五部分: 显示屏配置 | Display Configuration
+# ================================================================
+
+# GC9A01 圆形显示屏 (240x240)
+CONFIG_SPARKBOT_DISPLAY_ENABLE=y
+
+# SPI 模式选择 (0/1/2/3, 取决于 PCB 版本)
+# SPI Mode selection (depends on PCB version)
+CONFIG_SPARKBOT_DISPLAY_SPI_MODE=0
+
+# SPI 引脚配置
+CONFIG_SPARKBOT_DISPLAY_SPI_HOST=2          # SPI2_HOST
+CONFIG_SPARKBOT_DISPLAY_PIN_SCLK=12
+CONFIG_SPARKBOT_DISPLAY_PIN_MOSI=11
+CONFIG_SPARKBOT_DISPLAY_PIN_DC=10
+CONFIG_SPARKBOT_DISPLAY_PIN_CS=9
+CONFIG_SPARKBOT_DISPLAY_PIN_RST=8
+CONFIG_SPARKBOT_DISPLAY_PIN_BL=45
+
+# LVGL 配置
+CONFIG_LVGL_ENABLE=y
+CONFIG_LVGL_HOR_RES=240
+CONFIG_LVGL_VER_RES=240
+CONFIG_LVGL_COLOR_DEPTH=16                  # RGB565
+CONFIG_LVGL_BUF_SIZE_MULTIPLIER=10
+CONFIG_LVGL_DOUBLE_BUFFER=y
+CONFIG_LVGL_FULL_REFRESH=y
+CONFIG_LVGL_MEM_SIZE=65536
+CONFIG_LVGL_DEFAULT_DISP_BUF_SIZE=115200
+
+# ================================================================
+# 第六部分: 摄像头配置 | Camera Configuration
+# ================================================================
+
+# OV2640 摄像头
+CONFIG_SPARKBOT_CAMERA_ENABLE=y
+CONFIG_SPARKBOT_CAMERA_MODEL_OV2640=y
+CONFIG_SPARKBOT_CAMERA_PIX_FORMAT_JPEG=y
+
+# 摄像头引脚 (默认 8-bit 并行)
+# Camera pins (default 8-bit parallel)
+CONFIG_SPARKBOT_CAMERA_PIN_PWDN=-1
+CONFIG_SPARKBOT_CAMERA_PIN_RESET=-1
+CONFIG_SPARKBOT_CAMERA_PIN_XCLK=43
+CONFIG_SPARKBOT_CAMERA_PIN_VSYNC=6
+CONFIG_SPARKBOT_CAMERA_PIN_HREF=7
+CONFIG_SPARKBOT_CAMERA_PIN_PCLK=13
+CONFIG_SPARKBOT_CAMERA_PIN_D0=21
+CONFIG_SPARKBOT_CAMERA_PIN_D1=18
+CONFIG_SPARKBOT_CAMERA_PIN_D2=17
+CONFIG_SPARKBOT_CAMERA_PIN_D3=16
+CONFIG_SPARKBOT_CAMERA_PIN_D4=15
+CONFIG_SPARKBOT_CAMERA_PIN_D5=14
+CONFIG_SPARKBOT_CAMERA_PIN_D6=48
+CONFIG_SPARKBOT_CAMERA_PIN_D7=47
+
+# 摄像头参数
+CONFIG_SPARKBOT_CAMERA_FRAME_SIZE_QQVGA=y    # 160x120
+CONFIG_SPARKBOT_CAMERA_FRAME_SIZE="QQVGA"
+CONFIG_SPARKBOT_CAMERA_QUALITY=12            # 0-63 (越小越高)
+CONFIG_SPARKBOT_CAMERA_BRIGHTNESS=0          # -2 to 2
+CONFIG_SPARKBOT_CAMERA_CONTRAST=0            # -2 to 2
+CONFIG_SPARKBOT_CAMERA_VFLIP=n               # 垂直翻转
+CONFIG_SPARKBOT_CAMERA_HMIRROR=n             # 水平镜像
+
+# ================================================================
+# 第七部分: 音频配置 | Audio Configuration
+# ================================================================
+
+CONFIG_SPARKBOT_AUDIO_ENABLE=y
+
+# I2S 音频输出 (MAX98357A 功放)
+# I2S Audio output (MAX98357A amplifier)
+CONFIG_SPARKBOT_AUDIO_I2S_PORT=0
+CONFIG_SPARKBOT_AUDIO_PIN_BCLK=41
+CONFIG_SPARKBOT_AUDIO_PIN_LRCK=42
+CONFIG_SPARKBOT_AUDIO_PIN_DOUT=40
+CONFIG_SPARKBOT_AUDIO_SAMPLE_RATE=16000
+
+# I2S 麦克风输入 (INMP441 MEMS 麦克风)
+# I2S Microphone input (INMP441 MEMS mic)
+CONFIG_SPARKBOT_MIC_I2S_PORT=1
+CONFIG_SPARKBOT_MIC_PIN_SCLK=39
+CONFIG_SPARKBOT_MIC_PIN_WS=38
+CONFIG_SPARKBOT_MIC_PIN_DIN=37
+CONFIG_SPARKBOT_MIC_SAMPLE_RATE=16000
+
+# ================================================================
+# 第八部分: 传感器配置 | Sensor Configuration
+# ================================================================
+
+# BMI270 六轴 IMU (手势识别 + 姿态检测)
+# BMI270 6-axis IMU (gesture recognition + pose detection)
+CONFIG_SPARKBOT_IMU_ENABLE=y
+CONFIG_SPARKBOT_IMU_I2C_PORT=0
+CONFIG_SPARKBOT_IMU_PIN_SCL=4
+CONFIG_SPARKBOT_IMU_PIN_SDA=5
+CONFIG_SPARKBOT_IMU_I2C_ADDR=0x68
+CONFIG_SPARKBOT_IMU_GESTURE_ENABLE=y
+
+# CST816T 电容触摸屏
+# CST816T Capacitive touch
+CONFIG_SPARKBOT_TOUCH_ENABLE=y
+CONFIG_SPARKBOT_TOUCH_I2C_PORT=0
+CONFIG_SPARKBOT_TOUCH_PIN_SCL=4
+CONFIG_SPARKBOT_TOUCH_PIN_SDA=5
+CONFIG_SPARKBOT_TOUCH_PIN_INT=3
+CONFIG_SPARKBOT_TOUCH_PIN_RST=46
+CONFIG_SPARKBOT_TOUCH_I2C_ADDR=0x15
+
+# 物理按键
+# Physical buttons
+CONFIG_SPARKBOT_BUTTON_ENABLE=y
+CONFIG_SPARKBOT_BUTTON_PIN_BOOT=0
+
+# ================================================================
+# 第九部分: 网络服务配置 | Network Services Configuration
+# ================================================================
+
+# HTTP 客户端
+CONFIG_SPARKBOT_HTTP_CLIENT_ENABLE=y
+CONFIG_SPARKBOT_HTTP_CLIENT_TIMEOUT=15000    # ms
+CONFIG_SPARKBOT_HTTP_CLIENT_BUFFER_SIZE=4096
+
+# mDNS (局域网设备发现)
+CONFIG_SPARKBOT_MDNS_ENABLE=y
+CONFIG_SPARKBOT_MDNS_HOSTNAME="sparkbot"
+
+# ================================================================
+# 第十部分: 电源与电池管理 | Power & Battery Management
+# ================================================================
+
+CONFIG_SPARKBOT_POWER_MANAGEMENT_ENABLE=y
+CONFIG_SPARKBOT_BATTERY_ADC_CHANNEL=0        # ADC1_CH0 (GPIO1)
+CONFIG_SPARKBOT_BATTERY_VOLTAGE_DIVIDER=2.0  # 分压比
+CONFIG_SPARKBOT_BATTERY_LOW_THRESHOLD=3300   # mV
+CONFIG_SPARKBOT_SLEEP_TIMEOUT=60000          # 空闲睡眠超时 (ms)
+
+# ================================================================
+# 第十一部分: 调试与监控 | Debug & Monitoring
+# ================================================================
+
+# 日志级别 (0=None, 1=Error, 2=Warn, 3=Info, 4=Debug, 5=Verbose)
+CONFIG_LOG_DEFAULT_LEVEL=3                   # Info
+CONFIG_LOG_MAXIMUM_LEVEL=5                   # Verbose (调试时使用)
+CONFIG_LOG_TIMESTAMP_SOURCE_RTOS=y
+
+# 看门狗
+# Watchdog
+CONFIG_ESP_TASK_WDT_EN=y
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=10
+CONFIG_ESP_TASK_WDT_PANIC=y
+
+# 堆内存监控
+# Heap monitoring
+CONFIG_HEAP_TRACING_STANDALONE=n
+CONFIG_HEAP_TASK_TRACKING=n
+
+# ================================================================
+# 第十二部分: Flash 分区表 | Flash Partition Table
+# ================================================================
+
+# 使用 partitions.csv 定义的分区表
+# Use partition table defined in partitions.csv
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_OFFSET=0x8000
+
+# ================================================================
+# 文件结束 | End of File
+# ================================================================
