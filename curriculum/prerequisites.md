@@ -156,6 +156,12 @@ Don't worry! Here are suggestions to catch up:
 3. **命令行不熟悉**：花2-3小时学习基本的命令行操作
 4. **安装有困难**：Day 1的课程会详细指导ESP-IDF环境配置
 
+## 如果你 ESP-IDF 环境搭不起来怎么办 | If ESP-IDF Setup Blocks You
+
+ESP-IDF 的工具链（CMake + 交叉编译 + menuconfig）对零基础同学偶尔会卡住——装不上、编译报错、找不到串口都正常。**别卡死在这里**：本项目同时提供了 Track B（Arduino 框架 + AICat），用 Arduino IDE 上手更简单。如果 Track A 的 ESP-IDF 环境怎么都搭不通，可以先切到 Track B 跑通 LLM 对话流程，等环境问题解决后再切回 Track A 继续主线。Arduino 经验也能让你更快理解 ESP-IDF 在做什么——两者底层是同一颗 ESP32-S3 芯片。
+
+If the ESP-IDF toolchain (CMake + cross-compile + menuconfig) blocks you -- install failures, build errors, missing serial port all happen -- **don't get stuck**: this project also ships Track B (Arduino framework + AICat), which is simpler to start with in the Arduino IDE. If you can't get Track A's ESP-IDF environment working, switch to Track B first to get the LLM dialog flow running, then come back to Track A's main line once the environment issue is resolved. Arduino experience also helps you understand what ESP-IDF is doing -- both run on the same ESP32-S3 chip underneath.
+
 ## 推荐预习 | Recommended Pre-reading
 
 在开始课程之前，建议先浏览以下资料（不要求全部理解，混个脸熟即可）：

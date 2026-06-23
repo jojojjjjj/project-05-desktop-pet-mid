@@ -251,7 +251,7 @@ void app_main(void)
         1                       /* 固定到核心1 | Pin to core 1 */
     );
 
-    /* AI 对话任务 |
+    /* AI 对话任务 */
     /* AI dialog task */
     xTaskCreatePinnedToCore(
         task_ai_dialog,
@@ -437,8 +437,8 @@ static void init_hardware(void)
     /* 2. SPI bus init (display) */
     ESP_ERROR_CHECK(sparkbot_spi_init());
 
-    /* 3. 显示屏初始化 (GC9A01 240x240 圆形屏) */
-    /* 3. Display init (GC9A01 240x240 round display) */
+    /* 3. 显示屏初始化 (ST7789 240x240 1.54寸方屏) */
+    /* 3. Display init (ST7789 240x240 1.54" square) */
     ESP_ERROR_CHECK(lvgl_display_init());
 
     /* 4. 摄像头初始化 (OV2640) */

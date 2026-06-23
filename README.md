@@ -18,7 +18,7 @@
 | **主控** | ESP32-S3-WROOM-1-N16R8 | Seeed XIAO ESP32S3 Sense |
 | **开发框架** | ESP-IDF (C语言) | Arduino IDE (C/C++) + Python 后端 |
 | **AI能力** | 本地语音唤醒 + 云端LLM API | 云端多模态大模型 Qwen 3.5 Omni（语音+文本+视觉） |
-| **运动能力** | 静态桌面设备（可选履带底盘） | 4足行走（STS3032总线舵机）+ 表情舵机 |
+| **运动能力** | 静态桌面设备（可选履带底盘，选做不评分） | 4足行走（STS3032总线舵机）+ 表情舵机 |
 | **显示** | 1.54寸 240×240 LVGL GUI | 1.83寸 170×320 表情动画系统（LittleFS存储） |
 | **硬件技能** | PCB焊接、贴片元件 | 面包板接线、舵机组装、3D打印外壳 |
 | **软件技能** | ESP-IDF、FreeRTOS、LVGL | Arduino、Python后端、WebSocket、API集成 |
@@ -373,10 +373,10 @@ I have no embedded development background. Can I still do this project?
 Yes. Day 1 starts from the very basics of setting up ESP-IDF. However, it is strongly recommended to self-study C basics (variables, loops, functions, pointers) beforehand. Students with Arduino experience will find it easier.
 
 **Q: 焊接很难吗？我从来没碰过电烙铁。**
-A: Day 3-4会从零开始教焊接。SparkBot使用的贴片元件以0805/0603封装为主，配合助焊膏和正确手法，新手也能焊好。关键是耐心和细心 -- 我们准备了详细的焊接教学视频和图解。如果实在焊不上，可以请有经验的同学或助教帮忙。
+A: 阻容这些小元件（0805/0603 封装）新手配合助焊膏都能焊好，但本项目核心板上有三颗 IC 是硬坎——ESP32-S3 模组（密脚）、BMI270（LGA）、ES8311（QFN），焊盘都在芯片底部看不见，需要热风枪+锡浆，上百个焊点，零基础一次焊好的概率不高。我们的默认主线是走「嘉立创 SMT 预贴核心板」：下单时勾选贴片，让工厂把这三颗核心 IC 焊好，你只焊排针、Type-C、排线座这些大件，焊接量降到十几个点，新手也能成功（详见 `hardware/assembly-steps.md` 开头「路径选择」）。如果你愿意挑战 QFN/LGA 手工焊，那是可选挑战、不进主线评分；实在焊不上就换预贴板，不影响项目通过。
 
 Is soldering hard? I've never used a soldering iron.
-Days 3-4 teach soldering from scratch. SparkBot mainly uses 0805/0603 SMD components. With flux paste and proper technique, even beginners can succeed. The key is patience and care -- we provide detailed soldering tutorials. If you really struggle, ask experienced classmates or TAs for help.
+The small resistors/capacitors (0805/0603) are fine for beginners with flux paste. But the main board has three hard ICs -- the ESP32-S3 module (fine-pitch), BMI270 (LGA), and ES8311 (QFN) -- whose pads are hidden underneath, requiring a hot-air gun + solder paste and hundreds of joints; a beginner's first attempt rarely succeeds. Our default main line is the "JLCPCB SMT pre-soldered main board": select SMT assembly at order time so the factory solders those three core ICs, and you only solder headers, Type-C, and FPC connectors -- about a dozen joints a beginner can handle (see "Path Choice" at the top of `hardware/assembly-steps.md`). Hand-soldering the QFN/LGA yourself is an optional challenge, not part of the main-line rubric; if it goes wrong, switch to a pre-soldered board -- it does not block passing the project.
 
 **Q: 我的电脑是什么系统？能做吗？**
 A: ESP-IDF 支持 Windows 10/11、macOS 和 Linux。Windows用户推荐使用官方离线安装器，Mac/Linux用户使用命令行安装。所有平台功能一致。

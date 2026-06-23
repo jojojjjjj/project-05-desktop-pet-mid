@@ -8,6 +8,24 @@ This document provides a detailed, step-by-step assembly guide for the ESP-Spark
 
 ---
 
+## 路径选择：预贴核心板 vs 全手工焊 | Path Choice: Pre-Soldered Board vs Full Hand-Soldering
+
+本项目核心板上的三颗 IC（ESP32-S3 模组、BMI270、ES8311）分别是密脚/QFN/LGA 封装，焊盘在芯片底部看不见，需要热风枪+锡浆+助焊膏才能焊好，上百个焊点对零基础同学是真实硬坎——焊不上、连锡烧芯片都很常见。所以我们推荐两条路：
+
+- **路径 A（推荐零基础走）：嘉立创 SMT 预贴核心板**。下单 PCB 时同时勾选「SMT 贴片」，让嘉立创把 ESP32-S3 模组、BMI270、ES8311 这三颗核心 IC 帮你贴好焊好（核心板多花几十元）。你收到后只需要焊排针、Type-C 母座、FPC 排线座、接插件这些「大件、看得见、好焊」的元件，焊接量从上百点降到十几个点，新手也能一次成功。这是体验档的默认主线。
+- **路径 B（可选挑战）：全手工焊接**。如果你想挑战 QFN/LGA 热风枪焊接，按下面的「步骤 2-4」走完整流程。这条线是**可选挑战**，不进主线评分；焊废了不影响项目通过，可以中途换回预贴板。
+
+> 不管走哪条路，**焊完排针/接插件后、第一次上电前**，都要回到第 6.1 节做「堆叠后万用表测 VCC-GND 短路」检查——这一步安全检查两条路都不能省。
+
+This project's main board has three core ICs (ESP32-S3 module, BMI270, ES8311) in fine-pitch/QFN/LGA packages with hidden bottom pads, requiring a hot-air gun + solder paste + flux — hundreds of joints that are a real hurdle for beginners. So we recommend two paths:
+
+- **Path A (recommended for beginners): JLCPCB SMT pre-soldered main board.** When ordering the PCB, also select "SMT Assembly" so JLCPCB solders the ESP32-S3 module, BMI270, and ES8311 for you (extra tens of CNY on the main board). You then only solder the headers, Type-C connector, FPC connectors, and other "large, visible, easy" parts — joint count drops from hundreds to a dozen or so. This is the default main line for the experiential tier.
+- **Path B (optional challenge): full hand-soldering.** If you want to try QFN/LGA hot-air soldering, follow "Steps 2-4" below in full. This is an **optional challenge**, not part of the main-line rubric; ruining a board does not block project completion — you can switch to a pre-soldered board midway.
+
+> Whichever path you take, **after soldering the headers/connectors and before the first power-on**, return to section 6.1 for the "stack then measure VCC-GND short with a multimeter" check — this safety check must not be skipped on either path.
+
+---
+
 ## 工具准备 | Tools Preparation
 
 在开始之前，请确保以下工具齐备：
