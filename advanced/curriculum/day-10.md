@@ -86,10 +86,10 @@ async def chat_with_ai(user_text: str, history: list) -> str:
 | 项目 | 免费额度 | 价格 |
 |------|----------|------|
 | 新用户 | 100万 tokens | — |
-| Qwen 3.5 Omni 输入 | — | ¥0.002/千tokens |
-| Qwen 3.5 Omni 输出 | — | ¥0.006/千tokens |
+| Qwen 3.5 Omni 输入 | — | <!-- ¥0.002/千tokens --> |
+| Qwen 3.5 Omni 输出 | — | <!-- ¥0.006/千tokens --> |
 
-一次对话大约消耗 500-2000 tokens，费用约 ¥0.003-0.01。
+一次对话大约消耗 500-2000 tokens，费用约 <!-- ¥0.003-0.01 -->。
 
 ---
 

@@ -1,4 +1,5 @@
 # AICat 进阶版 | AICat Advanced — AI桌面猫（多模态大模型）| Multimodal AI Desktop Cat
+<!-- 注：价格信息已注释隐藏（查价不准确，仅作参考不严谨）/ Note: price info commented out (inaccurate, not rigorous as reference) -->
 
 > 基于云端多模态大模型 Qwen 3.5 Omni 的可步行桌面机器猫 | A Walking Desktop Robot Cat Powered by Cloud-based Multimodal LLM Qwen 3.5 Omni
 
@@ -101,29 +102,29 @@ After completing this project, you will have:
 
 | 部件 | 规格 | 参考价格 | 说明 |
 |------|------|----------|------|
-| 主控板 | Seeed XIAO ESP32S3 Sense | ~55元 | 含板载摄像头 + 麦克风，必须买 Sense 版本 |
-| LCD 屏幕 | 1.83寸 SPI, 170x320, ST7789 | ~20元 | 圆角 IPS 屏，SPI 接口 |
-| 音频功放 | MAX98357A I2S 模块 | ~8元 | 数字输入 D 类功放 |
-| 小喇叭 | 4Ω/3W | ~5元 | 配合 MAX98357A 使用 |
-| PWM 舵机驱动 | PCA9685 16路 | ~10元 | I2C 接口，驱动嘴巴/尾巴/耳朵舵机 |
+| 主控板 | Seeed XIAO ESP32S3 Sense | <!-- ~55元 --> | 含板载摄像头 + 麦克风，必须买 Sense 版本 |
+| LCD 屏幕 | 1.83寸 SPI, 170x320, ST7789 | <!-- ~20元 --> | 圆角 IPS 屏，SPI 接口 |
+| 音频功放 | MAX98357A I2S 模块 | <!-- ~8元 --> | 数字输入 D 类功放 |
+| 小喇叭 | 4Ω/3W | <!-- ~5元 --> | 配合 MAX98357A 使用 |
+| PWM 舵机驱动 | PCA9685 16路 | <!-- ~10元 --> | I2C 接口，驱动嘴巴/尾巴/耳朵舵机 |
 
 ### 舵机 | Servos
 
 | 部件 | 规格 | 参考价格 | 说明 |
 |------|------|----------|------|
-| STS3032 总线舵机 | x4 | ~240元（60元/个） | TTL 总线舵机，控制四条腿（ID1-ID4） |
-| TTL/总线转接模块 | x1 | ~15元 | STS3032 通信转接板 |
-| MG90S 金属齿轮舵机 | x1 | ~8元 | 尾巴舵机，力矩较大 |
-| 2g/3.7g 塑料齿轮舵机 | x3 | ~12元（4元/个） | 嘴巴 + 左耳 + 右耳，180度 PWM |
+| STS3032 总线舵机 | x4 | <!-- ~240元（60元/个） --> | TTL 总线舵机，控制四条腿（ID1-ID4） |
+| TTL/总线转接模块 | x1 | <!-- ~15元 --> | STS3032 通信转接板 |
+| MG90S 金属齿轮舵机 | x1 | <!-- ~8元 --> | 尾巴舵机，力矩较大 |
+| 2g/3.7g 塑料齿轮舵机 | x3 | <!-- ~12元（4元/个） --> | 嘴巴 + 左耳 + 右耳，180度 PWM |
 
 ### 电源与配件 | Power & Accessories
 
 | 部件 | 规格 | 参考价格 | 说明 |
 |------|------|----------|------|
-| 舵机电源 | 5V/2A 以上独立电源 | ~15元 | 舵机供电必须独立，不能从 ESP32 取电 |
-| 杜邦线 | 公对公 / 公对母 若干 | ~5元 | 各模块接线 |
-| 面包板 | 400孔（可选） | ~5元 | 原型搭建用 |
-| USB 数据线 | Type-C | ~5元 | XIAO 开发板使用 Type-C 接口 |
+| 舵机电源 | 5V/2A 以上独立电源 | <!-- ~15元 --> | 舵机供电必须独立，不能从 ESP32 取电 |
+| 杜邦线 | 公对公 / 公对母 若干 | <!-- ~5元 --> | 各模块接线 |
+| 面包板 | 400孔（可选） | <!-- ~5元 --> | 原型搭建用 |
+| USB 数据线 | Type-C | <!-- ~5元 --> | XIAO 开发板使用 Type-C 接口 |
 
 ### 3D 打印外壳 | 3D Printed Enclosure
 
@@ -133,9 +134,9 @@ After completing this project, you will have:
 | 腿部结构件 | 配合 STS3032 舵机 |
 | 头部结构件 | 固定屏幕、摄像头 |
 
-**总成本约 400-450 元**（含 STS3032 舵机，不含 3D 打印机和工具），在 500 元预算以内。
+**总成本约 <!-- 400-450 元 -->**（含 STS3032 舵机，不含 3D 打印机和工具），在 <!-- 500 元 -->预算以内。
 
-**Total cost approx. 400-450 CNY** (including STS3032 servos, excluding 3D printer and tools), within the 500 CNY budget.
+**Total cost approx. <!-- 400-450 CNY -->** (including STS3032 servos, excluding 3D printer and tools), within the <!-- 500 CNY --> budget.
 
 ## 软件环境 | Software Environment
 

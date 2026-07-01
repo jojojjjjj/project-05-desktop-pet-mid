@@ -1,4 +1,5 @@
 # 项目05：桌宠机器人 | Project 05: Desktop Pet Robot
+<!-- 注：价格信息已注释隐藏（查价不准确，仅作参考不严谨）/ Note: price info commented out (inaccurate, not rigorous as reference) -->
 
 > 本项目提供**两个平行轨道**，学员可根据基础和兴趣选择：
 > - **Track A（基础版）**：ESP-SparkBot，ESP-IDF 框架，从焊接开始构建完整桌面机器人
@@ -23,7 +24,7 @@
 | **硬件技能** | PCB焊接、贴片元件 | 面包板接线、舵机组装、3D打印外壳 |
 | **软件技能** | ESP-IDF、FreeRTOS、LVGL | Arduino、Python后端、WebSocket、API集成 |
 | **难度** | ⭐⭐⭐ 中等 | ⭐⭐⭐⭐ 进阶 |
-| **总成本** | ~120-150元 | ~350-400元 |
+| **总成本** | <!-- ~120-150元 --> | <!-- ~350-400元 --> |
 | **课程天数** | 12天 | 12天 |
 | **开源仓库** | [Gitee](https://gitee.com/esp-friends/esp_sparkbot) | [GitHub](https://github.com/AI-FanGe/AI_DesktopCat_Qwen3.5Omni) |
 
@@ -101,31 +102,31 @@ After completing this project, you will have:
 
 | 部件 | 规格 | 价格 | 说明 |
 |------|------|------|------|
-| 主控模组 | ESP32-S3-WROOM-1-N16R8 | ~25元 | 16MB Flash + 8MB PSRAM |
-| LCD屏幕 | 1.54寸 SPI, 240×240, ST7789 | ~18元 | IPS全视角 |
-| 摄像头 | OV2640, DVP接口, 200万像素 | ~12元 | 含FPC排线 |
-| 陀螺仪/加速度计 | BMI270 | ~8元 | 6轴IMU传感器 |
-| 音频编解码器 | ES8311 | ~5元 | I2S接口 |
-| 音频功放 | NS4150B | ~3元 | 3W D类功放 |
-| 喇叭 | 4Ω/3W | ~5元 | 小尺寸动圈喇叭 |
-| 麦克风 | 驻极体麦克风 | ~2元 | 模拟麦克风 |
+| 主控模组 | ESP32-S3-WROOM-1-N16R8 | <!-- ~25元 --> | 16MB Flash + 8MB PSRAM |
+| LCD屏幕 | 1.54寸 SPI, 240×240, ST7789 | <!-- ~18元 --> | IPS全视角 |
+| 摄像头 | OV2640, DVP接口, 200万像素 | <!-- ~12元 --> | 含FPC排线 |
+| 陀螺仪/加速度计 | BMI270 | <!-- ~8元 --> | 6轴IMU传感器 |
+| 音频编解码器 | ES8311 | <!-- ~5元 --> | I2S接口 |
+| 音频功放 | NS4150B | <!-- ~3元 --> | 3W D类功放 |
+| 喇叭 | 4Ω/3W | <!-- ~5元 --> | 小尺寸动圈喇叭 |
+| 麦克风 | 驻极体麦克风 | <!-- ~2元 --> | 模拟麦克风 |
 
 ### 电源与PCB | Power & PCB
 
 | 部件 | 规格 | 价格 | 说明 |
 |------|------|------|------|
-| 锂电池 | 3.7V 聚合物锂电池, 2000mAh | ~15元 | 502540尺寸 |
-| PCB打板 | 3块PCB（1.27mm排针排母堆叠） | ~30元 | 嘉立创打样, 板厚1.0mm |
-| 磁吸接口 | 4P (5V/GPIO48/GPIO38/GND) | ~3元 | 用于连接履带底盘 |
-| 排针排母 | 1.27mm间距 | ~2元 | PCB堆叠连接 |
+| 锂电池 | 3.7V 聚合物锂电池, 2000mAh | <!-- ~15元 --> | 502540尺寸 |
+| PCB打板 | 3块PCB（1.27mm排针排母堆叠） | <!-- ~30元 --> | 嘉立创打样, 板厚1.0mm |
+| 磁吸接口 | 4P (5V/GPIO48/GPIO38/GND) | <!-- ~3元 --> | 用于连接履带底盘 |
+| 排针排母 | 1.27mm间距 | <!-- ~2元 --> | PCB堆叠连接 |
 
 ### 外壳 | Enclosure
 
 | 部件 | 规格 | 价格 | 说明 |
 |------|------|------|------|
-| 主体后壳 | 3D打印 | ~15元 | PLA/PETG材质 |
-| 前盖(带屏幕卡口) | 3D打印 | ~10元 | 含屏幕固定结构 |
-| 摄像头前盖+后盖 | 3D打印 | ~5元 | 摄像头模块外壳 |
+| 主体后壳 | 3D打印 | <!-- ~15元 --> | PLA/PETG材质 |
+| 前盖(带屏幕卡口) | 3D打印 | <!-- ~10元 --> | 含屏幕固定结构 |
+| 摄像头前盖+后盖 | 3D打印 | <!-- ~5元 --> | 摄像头模块外壳 |
 
 ### 工具清单 | Tools Required
 
@@ -140,9 +141,9 @@ After completing this project, you will have:
 | B-7000胶水 | 外壳粘接 | 固定喇叭、磁吸接口 |
 | PCB夹 / 焊接台 | 固定PCB | 辅助焊接操作 |
 
-**总成本约120-150元**（不含电烙铁等可复用工具），远低于500元预算。
+**总成本约<!-- 120-150元 -->**（不含电烙铁等可复用工具），远低于<!-- 500元 -->预算。
 
-**Total cost approx. 120-150 CNY** (excluding reusable tools like soldering iron), well under the 500 CNY budget.
+**Total cost approx. <!-- 120-150 CNY -->** (excluding reusable tools like soldering iron), well under the <!-- 500 CNY --> budget.
 
 ## 软件环境 | Software Environment
 
@@ -385,10 +386,10 @@ What OS do I need?
 ESP-IDF supports Windows 10/11, macOS, and Linux. Windows users should use the official offline installer. Mac/Linux users can install via command line. All platforms have equal functionality.
 
 **Q: AI对话功能需要付费吗？**
-A: DeepSeek API提供新用户免费额度，豆包（字节跳动）也有免费tier。openai新用户赠送$5额度，国内的大模型API（文心一言、智谱AI）同样有免费额度。如果预算有限，可以只配置免费API。AI功能在Day 10才涉及，不影响前9天的学习。
+A: DeepSeek API提供新用户免费额度，豆包（字节跳动）也有免费tier。openai新用户赠送<!-- $5 -->额度，国内的大模型API（文心一言、智谱AI）同样有免费额度。如果预算有限，可以只配置免费API。AI功能在Day 10才涉及，不影响前9天的学习。
 
 Does the AI chat feature cost money?
-DeepSeek API offers free credits for new users. Doubao (ByteDance) also has a free tier. OpenAI gives new users $5 credits. Domestic Chinese LLM APIs (Wenxin Yiyan, ZhipuAI) also provide free quotas. If budget is tight, stick to free APIs. The AI module is on Day 10 and does not affect earlier learning.
+DeepSeek API offers free credits for new users. Doubao (ByteDance) also has a free tier. OpenAI gives new users <!-- $5 --> credits. Domestic Chinese LLM APIs (Wenxin Yiyan, ZhipuAI) also provide free quotas. If budget is tight, stick to free APIs. The AI module is on Day 10 and does not affect earlier learning.
 
 **Q: PCB打板要多久？需要提前准备吗？**
 A: 嘉立创PCB打样通常3-5天即可收到。建议开营前一周统一提交打板 + 采购元器件，确保Day 1就能拿到所有物料。3D打印外壳同样需要提前准备（约3-5天），或使用嘉立创的3D打印服务。
@@ -397,10 +398,10 @@ How long does PCB fabrication take? Should I prepare in advance?
 JLCPCB typically delivers within 3-5 days. We recommend submitting the PCB order and component purchases one week before camp starts. 3D-printed enclosures also require advance preparation (about 3-5 days), or you can use JLCPCB's 3D printing service.
 
 **Q: 为什么选择ESP32-S3而不是树莓派？**
-A: ESP32-S3成本低（主控模组仅~25元）、功耗低、集成度高（Wi-Fi+BLE+AI加速），是学习嵌入式AI开发的最佳入门平台。树莓派运行Linux，学习的是应用层开发，ESP32则让你真正理解"从寄存器到应用"的完整链路。
+A: ESP32-S3成本低（主控模组仅<!-- ~25元 -->）、功耗低、集成度高（Wi-Fi+BLE+AI加速），是学习嵌入式AI开发的最佳入门平台。树莓派运行Linux，学习的是应用层开发，ESP32则让你真正理解"从寄存器到应用"的完整链路。
 
 Why ESP32-S3 instead of Raspberry Pi?
-The ESP32-S3 is low-cost (module ~25 CNY), low-power, and highly integrated (Wi-Fi+BLE+AI acceleration) -- ideal for learning embedded AI. Raspberry Pi runs Linux and teaches application-layer development. ESP32 lets you truly understand the complete chain from registers to applications.
+The ESP32-S3 is low-cost (module <!-- ~25 CNY -->), low-power, and highly integrated (Wi-Fi+BLE+AI acceleration) -- ideal for learning embedded AI. Raspberry Pi runs Linux and teaches application-layer development. ESP32 lets you truly understand the complete chain from registers to applications.
 
 **Q: 烧录程序后屏幕不亮/没反应怎么办？**
 A: 常见原因排查：1) 检查USB线是否为数据线（非纯充电线）；2) 确认烧录时按住BOOT键；3) 检查电池是否连接正确且电压正常；4) 用万用表检查焊接是否有短路或虚焊。详见 `hardware/troubleshooting.md`。
@@ -433,7 +434,7 @@ AICat Advanced adds **cloud-based multimodal AI** to the desktop pet concept. Yo
 | [`advanced/README.md`](advanced/README.md) | 进阶版项目完整说明 |
 | [`advanced/curriculum/overview.md`](advanced/curriculum/overview.md) | 12天课程总览 |
 | [`advanced/curriculum/prerequisites.md`](advanced/curriculum/prerequisites.md) | 前置知识要求 |
-| [`advanced/hardware/BOM.md`](advanced/hardware/BOM.md) | 物料清单（~350-400元） |
+| [`advanced/hardware/BOM.md`](advanced/hardware/BOM.md) | 物料清单（<!-- ~350-400元 -->） |
 | [`advanced/hardware/wiring-guide.md`](advanced/hardware/wiring-guide.md) | 接线指南 |
 | [`advanced/software/SETUP_GUIDE.md`](advanced/software/SETUP_GUIDE.md) | 软件环境搭建 |
 | [`advanced/curriculum/grading-rubric.md`](advanced/curriculum/grading-rubric.md) | 评分标准 |

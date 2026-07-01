@@ -1,4 +1,5 @@
 # AICat 物料清单 / AICat Bill of Materials
+<!-- 注：价格信息已注释隐藏（查价不准确，仅作参考不严谨）/ Note: price info commented out (inaccurate, not rigorous as reference) -->
 
 > Advanced Track - Desktop Pet Hardware
 > 高级赛道 - 桌面宠物硬件
@@ -45,7 +46,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 1 | XIAO ESP32S3 **Sense** | WiFi+BLE, OV2640 摄像头, PDM 数字麦克风, 240MHz 双核, 8MB PSRAM, 8MB Flash | 1 | ~60 元 | ~60 元 |
+| 1 | XIAO ESP32S3 **Sense** | WiFi+BLE, OV2640 摄像头, PDM 数字麦克风, 240MHz 双核, 8MB PSRAM, 8MB Flash | 1 | <!-- ~60 元 --> | <!-- ~60 元 --> |
 
 > **重要**: 必须购买 **Sense** 版本! 普通版没有摄像头和麦克风。
 > **IMPORTANT**: You MUST buy the **Sense** version! The standard version has no camera or microphone.
@@ -61,7 +62,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 2 | ST7789 SPI LCD | 1.83 英寸, 170x320 像素, SPI 接口, 3.3V/5V 兼容 | 1 | ~15 元 | ~15 元 |
+| 2 | ST7789 SPI LCD | 1.83 英寸, 170x320 像素, SPI 接口, 3.3V/5V 兼容 | 1 | <!-- ~15 元 --> | <!-- ~15 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `ST7789 1.83寸 170x320 SPI LCD`
@@ -74,8 +75,8 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 3 | MAX98357A I2S 功放模块 | I2S 输入, 3W D类功放, 无需外部滤波 | 1 | ~8 元 | ~8 元 |
-| 4 | 小型喇叭 | 4Ω / 3W, 28mm-40mm 直径 | 1 | ~5 元 | ~5 元 |
+| 3 | MAX98357A I2S 功放模块 | I2S 输入, 3W D类功放, 无需外部滤波 | 1 | <!-- ~8 元 --> | <!-- ~8 元 --> |
+| 4 | 小型喇叭 | 4Ω / 3W, 28mm-40mm 直径 | 1 | <!-- ~5 元 --> | <!-- ~5 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `MAX98357A I2S 功放模块`
@@ -88,7 +89,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 5 | PCA9685 16 路 PWM 驱动 | I2C 接口, 16 通道, 12-bit PWM, 可级联 | 1 | ~12 元 | ~12 元 |
+| 5 | PCA9685 16 路 PWM 驱动 | I2C 接口, 16 通道, 12-bit PWM, 可级联 | 1 | <!-- ~12 元 --> | <!-- ~12 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `PCA9685 16路 PWM 舵机驱动`
@@ -103,7 +104,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 6 | STS3032 总线舵机 | TTL 串行通信, 360° 可控, 带反馈, 扭力 ~4.6kg.cm | 4 | ~40 元 | ~160 元 |
+| 6 | STS3032 总线舵机 | TTL 串行通信, 360° 可控, 带反馈, 扭力 ~4.6kg.cm | 4 | <!-- ~40 元 --> | <!-- ~160 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `STS3032 总线舵机`
@@ -114,7 +115,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 7 | 2g / 3.7g 微型舵机 | 模拟 PWM, 3.7g 重量, 180°, 用于嘴和尾巴 | 3 | ~8 元 | ~24 元 |
+| 7 | 2g / 3.7g 微型舵机 | 模拟 PWM, 3.7g 重量, 180°, 用于嘴和尾巴 | 3 | <!-- ~8 元 --> | <!-- ~24 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `2g 微型舵机` / `3.7g 舵机`
@@ -125,7 +126,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 8 | MG90S 金属齿轮舵机 | 金属齿轮, 180°, 扭力 ~1.8kg.cm, 用于耳朵 | 2 | ~12 元 | ~24 元 |
+| 8 | MG90S 金属齿轮舵机 | 金属齿轮, 180°, 扭力 ~1.8kg.cm, 用于耳朵 | 2 | <!-- ~12 元 --> | <!-- ~24 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `MG90S 金属齿轮舵机`
@@ -138,7 +139,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 9 | TTL 总线舵机转接板 | USB/UART 转 TTL, 用于设置舵机 ID 和测试 | 1 | ~15 元 | ~15 元 |
+| 9 | TTL 总线舵机转接板 | USB/UART 转 TTL, 用于设置舵机 ID 和测试 | 1 | <!-- ~15 元 --> | <!-- ~15 元 --> |
 
 **淘宝搜索关键词 / Taobao Search Keywords:**
 - `总线舵机 TTL 转接板`
@@ -151,7 +152,7 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 10 | 外部电源 5V/6V | 5V 或 6V, >= 3A 输出, 舵机独立供电 | 1 | ~20 元 | ~20 元 |
+| 10 | 外部电源 5V/6V | 5V 或 6V, >= 3A 输出, 舵机独立供电 | 1 | <!-- ~20 元 --> | <!-- ~20 元 --> |
 
 > **注意**: 舵机不能从 XIAO 的 3.3V/5V 供电! 必须使用独立电源。
 > **NOTE**: Do NOT power servos from XIAO's 3.3V/5V pin! Use a separate power supply.
@@ -167,15 +168,14 @@
 
 | # | 组件 / Component | 规格 / Specs | 数量 / Qty | 单价 / Unit Price | 小计 / Subtotal |
 |---|---|---|---|---|---|
-| 11 | 面包板 | 400 孔标准面包板 | 1 | ~5 元 | ~5 元 |
-| 12 | 杜邦线 | 公对公 + 公对母, 各 20 根 | 1 套 | ~5 元 | ~5 元 |
-| 13 | USB 数据线 | Type-C, 支持数据传输 (不仅是充电线) | 1 | ~5 元 | ~5 元 |
-| 14 | 3D 打印猫咪外壳 | PLA 材料, FDM 打印 (STL 文件见项目仓库) | 1 套 | ~20 元 | ~20 元 |
+| 11 | 面包板 | 400 孔标准面包板 | 1 | <!-- ~5 元 --> | <!-- ~5 元 --> |
+| 12 | 杜邦线 | 公对公 + 公对母, 各 20 根 | 1 套 | <!-- ~5 元 --> | <!-- ~5 元 --> |
+| 13 | USB 数据线 | Type-C, 支持数据传输 (不仅是充电线) | 1 | <!-- ~5 元 --> | <!-- ~5 元 --> |
+| 14 | 3D 打印猫咪外壳 | PLA 材料, FDM 打印 (STL 文件见项目仓库) | 1 套 | <!-- ~20 元 --> | <!-- ~20 元 --> |
 
 ---
 
-## 费用汇总 / Cost Summary
-
+<!-- ## 费用汇总 / Cost Summary
 | 类别 / Category | 金额 / Cost |
 |---|---|
 | 核心控制器 XIAO ESP32S3 Sense | ~60 元 |
@@ -192,6 +192,12 @@
 
 > 预估总价范围: **350 ~ 400 元** (因商家和运费而异)
 > Estimated total range: **350 ~ 400 RMB** (varies by seller and shipping)
+-->
+
+## 费用汇总 / Cost Summary
+
+<!-- 价格已隐藏 / Prices hidden -->
+费用汇总表已隐藏（查价不准确，仅作参考不严谨）。Cost summary table hidden (inaccurate pricing, not rigorous as reference).
 
 ---
 
@@ -215,4 +221,4 @@ If you need to buy in batches, follow this order:
 | ST7789 1.83" | ST7789 1.54" 240x240 | 更常见,但分辨率不同,需修改代码 |
 | STS3032 总线舵机 | SC0002 / ST3215 总线舵机 | 兼容 TTL 协议,需确认 ID 设置方式 |
 | MAX98357A | NS4150 / PAM8302 | 不同功放芯片,接线可能不同 |
-| MG90S 耳机舵机 | SG90 塑料齿轮舵机 | 更便宜 (~5 元) 但扭力小,齿轮不耐久 |
+| MG90S 耳机舵机 | SG90 塑料齿轮舵机 | 更便宜 (<!-- ~5 元 -->) 但扭力小,齿轮不耐久 |
