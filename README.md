@@ -48,6 +48,7 @@ The project focuses on embedded development, covering ESP-IDF toolchain setup, P
 
 | 项目 | 开源地址 |
 |------|----------|
+| 演示视频 | https://www.bilibili.com/video/BV1MezzYaEfP/ |
 | 硬件设计 | https://oshwhub.com/esp-college/esp-sparkbot |
 | 软件源码 | https://gitee.com/esp-friends/esp_sparkbot |
 | 3D打印模型 | https://makerworld.com.cn/zh/models/1025233-esp-sparkbot-esp32-s3-da-mo-xing-ai-zhuo-mian-ji-q |
@@ -331,7 +332,7 @@ esp_sparkbot/
 
 | 视频 | UP主 | 推荐理由 |
 |------|------|----------|
-| [ESP-SparkBot 开源项目介绍](https://space.bilibili.com/521895131) | 乐鑫小铁匠 | 项目作者官方介绍与教程 |
+| [ESP-SparkBot 开源项目介绍](https://www.bilibili.com/video/BV1MezzYaEfP/) | 乐鑫小铁匠 | 项目作者官方介绍与教程 |
 | [ESP32-S3入门教程（保姆级）](https://www.bilibili.com/video/BV1eM4y1y7cV/) | 乐鑫信息科技 | ESP32-S3零基础入门首选 |
 | [ESP-IDF开发环境搭建](https://www.bilibili.com/video/BV1vG41187Uo/) | 乐鑫信息科技 | 官方IDF环境搭建指南 |
 | [LVGL图形库入门](https://www.bilibili.com/video/BV1sN4y1V7tU/) | 正点原子 | LVGL嵌入式GUI开发 |
