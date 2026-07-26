@@ -339,6 +339,31 @@ void switch_ai_platform(int idx)
 
 ---
 
+## 进阶对比：实时语音 (volc_rtc) vs API→LLM 文字对话 | Advanced: Real-time Voice (volc_rtc) vs API→LLM Text Chat
+
+本课程实现的是 **API→LLM 文字对话**：触摸触发 → HTTP 调用 LLM (DeepSeek/ChatGPT/文心/Kimi) → 文字回复 → TTS 播报。简单、成本低、兼容任何 OpenAI 格式 LLM；但属于"一问一答"，非真正实时语音。
+
+若想做**全双工实时语音对话**（随时打断、低延迟），那是另一种架构——参考 ESP-ADF 的 `volc_rtc` 例程：
+
+| 维度 | 本课程 (API→LLM) | volc_rtc (实时语音) |
+|------|------|------|
+| 传输 | HTTP 请求/响应（文字） | RTC 实时流（OPUS 音频帧双向） |
+| 云服务 | LLM Chat API (DeepSeek/ChatGPT 等) | 豆包 Volcengine RTC / Coze 智能体 |
+| 触发 | 触摸 | 唤醒词「Hi 乐鑫」(ESP-SR wakenet) |
+| 回声消除 | 无（不需要） | AEC（需双麦 + 参考信号） |
+| 音频芯片 | ES8311 + 单驻极体麦 | ES8311 + ES7210（Korvo-2 v3，4 路 TDM） |
+| 难度 | ⭐⭐⭐ 夏令营主线 | ⭐⭐⭐⭐⭐ 进阶，需更多硬件 |
+
+> volc_rtc 已克隆到 `reference/esp-adf/examples/ai_agent/volc_rtc/`（仅本地参考，不入云）。其 README 原文：「连接豆包 volcano rtc 云端并进行语音交互，可以适用于智能音箱产品、智能玩具、语音控制设备等」，支持 ESP32-S3-Korvo-2 v3、OPUS/PCMA/AAC 编码、普通模式 + 唤醒模式。GitHub: https://github.com/espressif/esp-adf/tree/master/examples/ai_agent/volc_rtc
+>
+> 想深入的同学可对照 `reference/esp-adf/examples/ai_agent/volc_rtc/main/main.c` 与 `volc_rtc.c`，看 RTC 语音流如何与 AEC/wakenet 配合——属进阶课题，不在本课程评分范围。
+
+This course implements **API→LLM text chat**: touch-trigger → HTTP call to an LLM (DeepSeek/ChatGPT/Wenxin/Kimi) → text reply → TTS playback. Simple, low-cost, works with any OpenAI-compatible LLM; but it is request/response, not real-time voice.
+
+For **full-duplex real-time voice** (barge-in, low latency), that is a different architecture — see the ESP-ADF `volc_rtc` example (table above; the EN column mirrors the ZH row). The volc_rtc example is cloned locally at `reference/esp-adf/examples/ai_agent/volc_rtc/` (local reference only, not pushed). It is an advanced topic, not part of this course's grading.
+
+---
+
 ## 今日作业 | Homework
 
 ### 必做题

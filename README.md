@@ -18,7 +18,7 @@
 | **定位** | 嵌入式开发入门，从零焊接PCB | 多模态AI硬件集成，云端大模型接入 |
 | **主控** | ESP32-S3-WROOM-1-N16R8 | Seeed XIAO ESP32S3 Sense |
 | **开发框架** | ESP-IDF (C语言) | Arduino IDE (C/C++) + Python 后端 |
-| **AI能力** | 本地语音唤醒 + 云端LLM API | 云端多模态大模型 Qwen 3.5 Omni（语音+文本+视觉） |
+| **AI能力** | 触摸触发 + 通过 API 调用云端 LLM 对话（语音唤醒/实时语音为进阶扩展，见 volc_rtc 例程） | 云端多模态大模型 Qwen 3.5 Omni（语音+文本+视觉） |
 | **运动能力** | 静态桌面设备（可选履带底盘，选做不评分） | 4足行走（STS3032总线舵机）+ 表情舵机 |
 | **显示** | 1.54寸 240×240 LVGL GUI | 1.83寸 170×320 表情动画系统（LittleFS存储） |
 | **硬件技能** | PCB焊接、贴片元件 | 面包板接线、舵机组装、3D打印外壳 |
@@ -53,12 +53,20 @@ The project focuses on embedded development, covering ESP-IDF toolchain setup, P
 | 软件源码 | https://gitee.com/esp-friends/esp_sparkbot |
 | 3D打印模型 | https://makerworld.com.cn/zh/models/1025233-esp-sparkbot-esp32-s3-da-mo-xing-ai-zhuo-mian-ji-q |
 | 交流论坛 | https://www.sparkbot.com.cn/ |
+| 实时语音参考 (volc_rtc·进阶) | https://github.com/espressif/esp-adf/tree/master/examples/ai_agent/volc_rtc |
+
+> **关于「AI 对话」与 volc_rtc 例程** | On "AI dialogue" vs the volc_rtc example
+> 本课程 Track A 的 AI 对话采用 **HTTP API 调用大语言模型 (LLM)** 的方式（DeepSeek / ChatGPT / 文心一言 / Kimi 等，文字请求 → 文字回复 → TTS 播报），由触摸触发，**不是**豆包 RTC 实时语音。
+> ESP-SparkBot 上游机器人另支持本地语音唤醒（ESP-SR）；若要实现**全双工实时语音**对话（豆包 Volcengine RTC / Coze，OPUS 编码 + AEC 回声消除 + 唤醒词「Hi 乐鑫」），请参考 ESP-ADF 的 `examples/ai_agent/volc_rtc` 例程——已克隆到 `reference/esp-adf/`（仅本地参考，不入云）。两者是不同架构：API→LLM 文字对话 vs RTC 实时语音流。
+>
+> Track A's AI dialogue uses **HTTP API calls to an LLM** (DeepSeek / ChatGPT / Wenxin Yiyan / Kimi — text request → text reply → TTS playback), touch-triggered — **not** Doubao RTC real-time voice.
+> The upstream ESP-SparkBot also supports local wake-word (ESP-SR); for **full-duplex real-time voice** (Doubao Volcengine RTC / Coze, OPUS + AEC + "Hi Lexin" (Hi 乐鑫) wake word), see the ESP-ADF `examples/ai_agent/volc_rtc` example — cloned locally at `reference/esp-adf/` (local reference only, not pushed). Two different architectures: API→LLM text chat vs RTC real-time voice streaming.
 
 ## 最终效果 | Final Result
 
 完成本项目后，你将拥有：
 - 一个搭载 1.54寸 LCD 屏幕、摄像头、麦克风、喇叭的桌面机器人
-- 支持 DeepSeek / ChatGPT / 文心一言 / 豆包 / Kimi 等大模型的智能语音对话
+- 通过 API 调用大语言模型 (LLM) 实现智能对话，支持 DeepSeek / ChatGPT / 文心一言 / Kimi 等（API 调用方式，非实时语音；实时语音方案见 volc_rtc 例程）
 - 实时天气时钟显示（IP定位自动获取本地天气）
 - 蓝牙音箱功能（通过小度APP配网，支持QQ音乐、新闻、有声读物）
 - 赛博木鱼：触摸感应敲木鱼，支持ESP-NOW多设备同步
@@ -70,7 +78,7 @@ The project focuses on embedded development, covering ESP-IDF toolchain setup, P
 
 After completing this project, you will have:
 - A desktop robot with a 1.54" LCD, camera, microphone, and speaker
-- Intelligent voice conversation powered by DeepSeek / ChatGPT / Wenxin Yiyan / Doubao / Kimi / ZhipuAI / Mistral AI / XiaoZhi AI and more
+- Intelligent dialogue via API calls to LLMs — supports DeepSeek / ChatGPT / Wenxin Yiyan / Kimi / ZhipuAI / Mistral AI / XiaoZhi AI and more (HTTP API approach, not real-time voice; for real-time voice see the volc_rtc example)
 - Real-time weather & clock display (auto-location via IP geolocation)
 - Bluetooth speaker mode (configured via Xiaodu app, supports QQ Music, news, audiobooks)
 - Cyber Muyu: touch-sensitive wooden fish tapping with ESP-NOW multi-device sync

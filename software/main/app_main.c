@@ -655,7 +655,7 @@ static void task_audio_process(void *pvParameters)
                 case SPARKBOT_EVENT_START_LISTENING:
                     /* 开始语音识别 | Start speech recognition */
                     ESP_LOGI(TAG, "[音频] 开始聆听... | Listening...");
-                    /* TODO: 启动 I2S 录音 + VAD 检测 */
+                    /* TODO (进阶扩展·可选): 启动 I2S 录音 + VAD 检测；实时语音方案见 reference/esp-adf volc_rtc 例程 */
                     break;
 
                 case SPARKBOT_EVENT_TTS_PLAY: {
@@ -663,7 +663,7 @@ static void task_audio_process(void *pvParameters)
                     const char *text = (const char *)event.data;
                     if (text != NULL) {
                         ESP_LOGI(TAG, "[音频] TTS播放: %s | Playing TTS: %s", text);
-                        /* TODO: 调用百度TTS API → 获取音频 → I2S播放 */
+                        /* TODO (进阶扩展·可选): 调用百度TTS API → 获取音频 → I2S播放 */
                     }
                     break;
                 }
