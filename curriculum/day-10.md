@@ -58,6 +58,8 @@ LLMs represent the most important technological breakthrough since 2023. Integra
 | 文心一言 | aip.baidubce.com | 有免费配额 | 百度 |
 | 智谱AI | open.bigmodel.cn | 注册赠送 | 清华系 |
 
+> 原计划使用豆包（火山引擎），其他平台也都可以，按需选择即可，不限制。
+
 **步骤:**
 
 ```c
@@ -341,7 +343,7 @@ void switch_ai_platform(int idx)
 
 ## 进阶对比：实时语音 (volc_rtc) vs API→LLM 文字对话 | Advanced: Real-time Voice (volc_rtc) vs API→LLM Text Chat
 
-本课程实现的是 **API→LLM 文字对话**：触摸触发 → HTTP 调用 LLM (DeepSeek/ChatGPT/文心/Kimi) → 文字回复 → TTS 播报。简单、成本低、兼容任何 OpenAI 格式 LLM；但属于"一问一答"，非真正实时语音。
+本课程实现的是 **API→LLM 文字对话**：触摸触发 → HTTP 调用 LLM（原计划用豆包，DeepSeek/ChatGPT/文心/Kimi 等其他 Agent 也都可以）→ 文字回复 → TTS 播报。简单、成本低、兼容任何 OpenAI 格式 LLM；但属于"一问一答"，非真正实时语音。
 
 若想做**全双工实时语音对话**（随时打断、低延迟），那是另一种架构——参考 ESP-ADF 的 `volc_rtc` 例程：
 
@@ -358,7 +360,7 @@ void switch_ai_platform(int idx)
 >
 > 想深入的同学可对照 `reference/esp-adf/examples/ai_agent/volc_rtc/main/main.c` 与 `volc_rtc.c`，看 RTC 语音流如何与 AEC/wakenet 配合——属进阶课题，不在本课程评分范围。
 
-This course implements **API→LLM text chat**: touch-trigger → HTTP call to an LLM (DeepSeek/ChatGPT/Wenxin/Kimi) → text reply → TTS playback. Simple, low-cost, works with any OpenAI-compatible LLM; but it is request/response, not real-time voice.
+This course implements **API→LLM text chat**: touch-trigger → HTTP call to an LLM (originally Doubao; DeepSeek/ChatGPT/Wenxin/Kimi etc. all work too) → text reply → TTS playback. Simple, low-cost, works with any OpenAI-compatible LLM; but it is request/response, not real-time voice.
 
 For **full-duplex real-time voice** (barge-in, low latency), that is a different architecture — see the ESP-ADF `volc_rtc` example (table above; the EN column mirrors the ZH row). The volc_rtc example is cloned locally at `reference/esp-adf/examples/ai_agent/volc_rtc/` (local reference only, not pushed). It is an advanced topic, not part of this course's grading.
 
